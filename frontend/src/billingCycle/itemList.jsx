@@ -10,13 +10,18 @@ import If from '../common/operator/if'
 class ItemList extends Component {
    add(index, item = {}) {
       if (!this.props.readOnly) {
-         this.props.arrayInsert('billingCycleForm', this.props.fi, index, item)
+         this.props.arrayInsert(
+            'billingCycleForm',
+            this.props.field,
+            index,
+            item
+         )
       }
    }
 
    remove(index) {
       if (!this.props.readOnly && this.props.list.length > 1) {
-         this.props.arrayRemove('billingCycleForm', this.props.fi, index)
+         this.props.arrayRemove('billingCycleForm', this.props.field, index)
       }
    }
 
